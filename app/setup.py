@@ -35,7 +35,7 @@ setup(
     description=(
         'Process JUnit XML and Cobertura coverage XML reports into Markdown'
     ),
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     install_requires=[],
     url='https://github.com/pytest-buildkite/pipefish',
