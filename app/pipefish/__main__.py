@@ -1,5 +1,5 @@
 """
-Module load handler for execution via python -m pymodulenamegoeshere.
+Module load handler for execution via python -m pipefish.
 """
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)

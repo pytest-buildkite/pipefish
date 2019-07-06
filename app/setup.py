@@ -1,19 +1,19 @@
 """
-Setuptool Distribution for pymodulenamegoeshere
+Setuptool Distribution for pipefish
 """
 from setuptools import setup
 
 setup(
-    name='pymodulenamegoeshere',
+    name='pipefish',
     version='0.1.1dev',
     author='Tim Gates',
     author_email='tim.gates@iress.com',
-    packages=['pymodulenamegoeshere',],
+    packages=['pipefish'],
     license='GPLv3+',
     long_description=(
-        'Description goes here'
+        'Process JUnit XML and Cobertura coverage XML reports into Markdown'
     ),
-    url='homepageurlgoeshere',
+    url='https://github.com/pytest-buildkite/pipefish',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Framework :: Pytest',
@@ -30,6 +30,6 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Operating System :: OS Independent',
-        "License :: OSI Approved :: GNU GENERAL PUBLIC LICENSE V3 (GPLV3)",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     ],
 )
