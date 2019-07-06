@@ -55,7 +55,9 @@ def _all_tests_passed(collected, skips, timetxt):
     )
 
 
-def _test_issues(cases, errors, failures, skips, collected, timetxt):
+def _test_issues(  # pylint:disable=unused-argument
+                 cases, errors, failures, skips, collected, timetxt):
     """
+    Report details of issues found
     """
     return 'issues'
