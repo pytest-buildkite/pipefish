@@ -42,3 +42,22 @@ def test_outcomes(outcome_filename, expected_outcome):
     result = process_junit_xml(samplepath)
     # Verify
     assert result == expected_outcome  # nosec
+
+
+def test_invalid_xml():
+    """
+    GIVEN a sample JUnit XML containing non-junit XML WHEN calling
+    process_junit_xml THEN the call raises an Exception indicating failure to
+    process.
+    """
+    # Setup
+    from pipefish.process_junit import process_junit_xml
+    samplepath = os.path.join(
+        os.path.dirname(get_basedir()), 'data', 'junit_invalid.xml'
+    )
+    # Exercise
+    with pytest.raises(Exception) as excctxt:
+        # Exercise
+        process_junit_xml(samplepath)
+    # Verify
+    assert excctxt.value.args[0] == 'Failed to process JUnit XML'  # nosec
