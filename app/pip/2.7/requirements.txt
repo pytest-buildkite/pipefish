@@ -1,9 +1,12 @@
-twine
-wheel
 bandit
+defusedxml
+docopt
 flake8
+mock
 pylint
 pytest
 pytest-azurepipelines42
 pytest-cov
 pytest-xdist
+twine
+wheel
