@@ -38,7 +38,9 @@ def _no_tests_collected(timetxt):
     """
     Report for empty results
     """
-    return 'no tests'
+    return 'No test cases found to run (ran in {0} seconds).'.format(
+        timetxt,
+    )
 
 
 def _all_tests_passed(collected, skips, timetxt):
@@ -47,7 +49,7 @@ def _all_tests_passed(collected, skips, timetxt):
     """
     return (
         'All tests passed ({0} tests collected, {1} tests skipped, ran in'
-        ' {3} seconds).'.format(
+        ' {2} seconds).'.format(
             collected, skips, timetxt,
         )
     )

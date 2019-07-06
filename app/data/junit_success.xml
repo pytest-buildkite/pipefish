@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="0" name="pytest" skips="0" tests="3" time="0.146"><testcase classname="tests.test_main" file="tests/test_main.py" line="7" name="test_main" time="0.022446870803833008"><system-err>Please select a processing option either --junit or --cobertura.
+</system-err></testcase><testcase classname="tests.test_main" file="tests/test_main.py" line="26" name="test_main_junit" time="0.0021839141845703125"><system-out>
+</system-out></testcase><testcase classname="tests.test_process_junit" file="tests/test_process_junit.py" line="17" name="test_outcomes[junit_issues.xml-issues]" time="0.009357929229736328"></testcase></testsuite>
