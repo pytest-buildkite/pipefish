@@ -1,2 +1,2 @@
-# 3amigos GitHub Template Repository
-Starting point for a python based 3amigos library project.
+# pipefish
+Process JUnit XML and Cobertura coverage XML reports into Markdown
