@@ -16,7 +16,28 @@ def get_basedir():
 
 
 @pytest.mark.parametrize("outcome_filename,expected_outcome", [
-    ('junit_issues.xml', 'issues'),
+    (
+        'junit_issues.xml',
+        '2 test(s) had failures (ran in 0.097 seconds).\n'
+        '\n'
+        '> def test\\_zero():\n'
+        '>         """\n'
+        '>         Test an exception\n'
+        '>         """\n'
+        '> \\>       \\_ = 0 / 0\n'
+        '> E       ZeroDivisionError: division by zero\n'
+        '> \n'
+        '> app/test/test\\_demo.py:19: ZeroDivisionError\n'
+        '\n'
+        '> def test\\_bad\\_assert():\n'
+        '>         """\n'
+        '>         Test assertion fail\n'
+        '>         """\n'
+        '> \\>       assert 1 + 1 == 3\n'
+        '> E       assert (1 + 1) == 3\n'
+        '> \n'
+        '> app/test/test\\_demo.py:42: AssertionError'
+    ),
     (
         'junit_notests.xml',
         'No test cases found to run (ran in 0.026 seconds).'

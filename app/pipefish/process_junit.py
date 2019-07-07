@@ -100,4 +100,43 @@ def _test_issues(suite):  # pylint:disable=unused-argument
     """
     Report details of issues found
     """
-    return 'issues'
+    msg = []
+    if suite.errors > 0:
+        msg.append('{0} test(s) had errors'.format(
+            suite.errors
+        ))
+    if suite.failures > 0:
+        msg.append('{0} test(s) had failures'.format(
+            suite.failures
+        ))
+    result = ["{0} (ran in {1}).".format(
+        ' and '.join(msg), suite.timetxt,
+    )]
+    for case in suite.cases:
+        if not case.failures:
+            continue
+        result.extend(
+            _markdown_block(failure.full) for failure in case.failures
+        )
+    return '\n\n'.join(result)
+
+
+def _markdown_block(text):
+    """
+    Escape a block of text for markdown and use the fixed width markedown
+    syntax.
+    """
+    result = []
+    for line in text.splitlines():
+        result.append('> {0}'.format(
+            line.replace(
+                '\\', '\\\\'
+            ).replace(
+                '_', '\\_'
+            ).replace(
+                '<', '\\<'
+            ).replace(
+                '>', '\\>'
+            )
+        ))
+    return '\n'.join(result)
