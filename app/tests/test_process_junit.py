@@ -1,5 +1,5 @@
 """
-Test modules for pipefish __main__
+Test modules for pipefish process_junit
 """
 
 import os
