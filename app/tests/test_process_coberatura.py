@@ -18,7 +18,8 @@ def get_basedir():
 @pytest.mark.parametrize("outcome_filename,expected_outcome", [
     (
         'cobertura_coverage.xml',
-        'Coverage is 60.61% (20 lines of 33 total).'
+        'Coverage is 60.61% meets minimum of 50.00%'
+        ' (20 lines of 33 total).'
     ),
 ])
 def test_outcomes(outcome_filename, expected_outcome):
@@ -33,7 +34,7 @@ def test_outcomes(outcome_filename, expected_outcome):
         os.path.dirname(get_basedir()), 'data', outcome_filename
     )
     # Exercise
-    result = process_cobertura_xml(samplepath)
+    result = process_cobertura_xml(samplepath, 50)
     # Verify
     assert result == expected_outcome  # nosec
 
