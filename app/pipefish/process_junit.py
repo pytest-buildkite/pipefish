@@ -10,6 +10,14 @@ TestSuite = collections.namedtuple('TestSuite', [
     'cases', 'errors', 'failures', 'skips', 'collected', 'timetxt',
 ])
 
+TestCase = collections.namedtuple('TestCase', [
+    'classname', 'filename', 'line', 'name', 'timetxt', 'failures',
+ ])
+
+TestFailure = collections.namedtuple('TestFailure', [
+    'message', 'full',
+])
+
 
 def process_junit_xml(filepath):
     """
@@ -17,7 +25,7 @@ def process_junit_xml(filepath):
     """
     doc = ET.parse(filepath)
     for suite in doc.iter('testsuite'):
-        cases = list(suite.iter('testcase'))
+        cases = _collect_cases(suite)
         errors = int(suite.attrib.get('errors', '0'))
         failures = int(suite.attrib.get('failures', '0'))
         skips = int(suite.attrib.get('skips', '0'))
@@ -30,6 +38,30 @@ def process_junit_xml(filepath):
         )
         return _process_junit_cases(suiteobj)
     raise Exception('Failed to process JUnit XML')
+
+
+def _collect_cases(suite):
+    """
+    Read ElementTree Test Cases
+    """
+    result = []
+    for case in suite.iter('testcase'):
+        classname = case.attrib.get('classname', '')
+        filename = case.attrib.get('file', '')
+        line = case.attrib.get('line', '')
+        name = case.attrib.get('name', '')
+        timetxt = '{0} seconds'.format(
+            case.attrib.get('time', '')
+        )
+        failures = []
+        for failure in case.iter('failure'):
+            message = failure.get('message', '')
+            full = failure.text
+            failures.append(TestFailure(message, full))
+        result.append(TestCase(
+            classname, filename, line, name, timetxt, failures,
+        ))
+    return result
 
 
 def _process_junit_cases(suite):
