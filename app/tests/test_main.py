@@ -24,11 +24,15 @@ def test_main():
     assert excctxt.value.args[0] == 1  # nosec
 
 
-def test_main_junit():
+@pytest.mark.parametrize("option,expect_call", [
+    ('--junit', 'process_junit_xml'),
+    ('--cobertura', 'process_cobertura_xml'),
+])
+def test_main_junit(option, expect_call):
     """
     GIVEN the pipefish.__main__ module entry point WHEN calling
-    main selecting junit processing THEN the call processes the sample
-    junit file.
+    main selecting the specified processing THEN the call processes the sample
+    file.
     """
     # Setup
     from pipefish.__main__ import main
@@ -36,11 +40,11 @@ def test_main_junit():
     samplepath = 'samplepath'
     fake_docopt = mock.patch(
         'pipefish.__main__.docopt', return_value={
-            '--junit': samplepath
+            option: samplepath
         }
     )
     fake_process = mock.patch(
-        'pipefish.__main__.process_junit_xml', return_value='',
+        'pipefish.__main__.%s' % (expect_call,), return_value='',
     )
     with fake_docopt, fake_process as mock_process:
         # Exercise
