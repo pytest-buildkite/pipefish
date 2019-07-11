@@ -12,7 +12,7 @@ TestSuite = collections.namedtuple('TestSuite', [
 
 TestCase = collections.namedtuple('TestCase', [
     'classname', 'filename', 'line', 'name', 'timetxt', 'failures',
- ])
+])
 
 TestFailure = collections.namedtuple('TestFailure', [
     'message', 'full',
