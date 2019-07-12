@@ -15,14 +15,21 @@ def get_basedir():
     return os.path.dirname(os.path.abspath(sys.modules[__name__].__file__))
 
 
-@pytest.mark.parametrize("outcome_filename,expected_outcome", [
+@pytest.mark.parametrize("outcome_filename,minimum,expected_outcome", [
     (
         'cobertura_coverage.xml',
+        50,
         'Coverage is 60.61% meets minimum of 50.00%'
         ' (20 lines of 33 total).'
     ),
+    (
+        'cobertura_coverage.xml',
+        70,
+        'Coverage is 60.61% is below minimum of 70.00%'
+        ' (20 lines of 33 total).'
+    ),
 ])
-def test_outcomes(outcome_filename, expected_outcome):
+def test_outcomes(outcome_filename, minimum, expected_outcome):
     """
     GIVEN a sample Cobertura Coverage XML containing specified outcome WHEN
     calling process_cobertura_xml THEN the call returns markdown highlighting
@@ -34,7 +41,7 @@ def test_outcomes(outcome_filename, expected_outcome):
         os.path.dirname(get_basedir()), 'data', outcome_filename
     )
     # Exercise
-    result = process_cobertura_xml(samplepath, 50)
+    result = process_cobertura_xml(samplepath, minimum)
     # Verify
     assert result == expected_outcome  # nosec
 

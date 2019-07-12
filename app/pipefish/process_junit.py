@@ -54,10 +54,11 @@ def _collect_cases(suite):
             case.attrib.get('time', '')
         )
         failures = []
-        for failure in case.iter('failure'):
-            message = failure.get('message', '')
-            full = failure.text
-            failures.append(TestFailure(message, full))
+        for failurekind in ('failure', 'error'):
+            for failure in case.iter(failurekind):
+                message = failure.get('message', '')
+                full = failure.text
+                failures.append(TestFailure(message, full))
         result.append(TestCase(
             classname, filename, line, name, timetxt, failures,
         ))

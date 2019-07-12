@@ -39,6 +39,12 @@ def get_basedir():
         '> app/test/test\\_demo.py:42: AssertionError'
     ),
     (
+        'junit_errors.xml',
+        '1 test(s) had errors (ran in 0.097 seconds).\n'
+        '\n'
+        '> Got an error.'
+    ),
+    (
         'junit_notests.xml',
         'No test cases found to run (ran in 0.026 seconds).'
     ),
