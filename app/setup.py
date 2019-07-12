@@ -25,7 +25,7 @@ def read(fname):
 
 setup(
     name='pipefish',
-    version='0.1.1dev',
+    version='0.2.0',
     author='Tim Gates',
     author_email='tim.gates@iress.com',
     maintainer='Tim Gates',
@@ -37,7 +37,7 @@ setup(
     ),
     long_description=read('README.md'),
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
-    install_requires=[],
+    install_requires=['docopt', 'defusedxml'],
     url='https://github.com/pytest-buildkite/pipefish',
     classifiers=[
         'Development Status :: 4 - Beta',

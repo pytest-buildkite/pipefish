@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite errors="1" failures="0" name="pytest" skips="0" tests="1" time="0.097">
+<testcase classname="app.test.test_demo" file="app/test/test_demo.py" line="7" name="test_demo" time="0.0009610652923583984">
+<error message="Some Error">Got an error.</error>
+</testcase>
+</testsuite>
