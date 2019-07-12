@@ -25,7 +25,7 @@ def read(fname):
 
 setup(
     name='pipefish',
-    version='0.2.0',
+    version='0.3.0',
     author='Tim Gates',
     author_email='tim.gates@iress.com',
     maintainer='Tim Gates',
@@ -36,6 +36,7 @@ setup(
         'Process JUnit XML and Cobertura coverage XML reports into Markdown'
     ),
     long_description=read('README.md'),
+    long_description_content_type='text/markdown',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     install_requires=['docopt', 'defusedxml'],
     url='https://github.com/pytest-buildkite/pipefish',
