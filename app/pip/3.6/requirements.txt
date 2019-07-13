@@ -2,6 +2,7 @@ bandit
 defusedxml
 docopt
 flake8
+isort
 mock
 pylint
 pytest
