@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Setuptool Distribution for pipefish
+`setuptools` Distribution for pipefish
 """
 
 # {{{ Import
