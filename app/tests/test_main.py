@@ -8,7 +8,7 @@ import pytest
 def test_main():
     """
     GIVEN the pipefish.__main__ module entry point WHEN calling
-    main without correct arguments THEN the call raises a SystemExit with an
+    main without correct arguments THEN the call raises a `SystemExit` with an
     return code of 1
     """
     # Setup

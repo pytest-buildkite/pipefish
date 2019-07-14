@@ -1,3 +1,7 @@
+cobertura
+junit
+JUnit
 nosec
-pylint
 pipefish
+pylint
+xml
