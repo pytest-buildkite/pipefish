@@ -1,0 +1,7 @@
+cobertura
+junit
+JUnit
+nosec
+pipefish
+pylint
+xml
