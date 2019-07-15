@@ -19,12 +19,19 @@ from setuptools import setup
 PACKAGE_NAME = 'pipefish'
 
 
-def read(fname):
+def load_readme(fname):
     """
-    Read the contents of relative file.
+    Read the contents of relative `README` file.
     """
     file_path = os.path.join(os.path.dirname(__file__), fname)
-    return codecs.open(file_path, encoding='utf-8').read()
+    with codecs.open(file_path, encoding='utf-8') as fobj:
+        return re.sub(
+            '[(]([^)]*[.]md)[)]',
+            '(https://github.com/'
+            'pytest-buildkite/pipefish'
+            '/blob/master/\\g<1>)',
+            fobj.read(),
+        )
 
 
 def read_version():
@@ -55,7 +62,7 @@ setup(
     description=(
         'Process JUnit XML and Cobertura coverage XML reports into Markdown'
     ),
-    long_description=read('README.md'),
+    long_description=load_readme('README.md'),
     long_description_content_type='text/markdown',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     install_requires=['docopt', 'defusedxml'],
