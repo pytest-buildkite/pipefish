@@ -42,6 +42,10 @@ def get_basedir():
         '>       assert 1 + 1 == 3\n'
         'E       assert (1 + 1) == 3\n'
         '\n'
+        "'''\n"
+        'code snippet\n'
+        "'''\n"
+        '\n'
         'app/test/test_demo.py:42: AssertionError\n'
         '```\n'
     ),
