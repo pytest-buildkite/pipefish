@@ -1,0 +1,4 @@
+[tool.towncrier]
+    package = "pipefish"
+    package_dir = "app"
+    filename = "NEWS.rst"
