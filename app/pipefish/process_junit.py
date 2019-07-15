@@ -129,7 +129,7 @@ def _markdown_block(text):
     """
     result = []
     for line in text.splitlines():
-        if line.strip() == '```'
+        if line.strip() == '```':
             line = "'''"
         result.append(line)
     return '\n```\n{0}\n```\n'.format('\n'.join(result))
