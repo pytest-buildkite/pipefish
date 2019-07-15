@@ -8,11 +8,15 @@
 # System  Imports
 import codecs
 import os
+import re
 
 # External Imports
 from setuptools import setup
 
 # }}}
+
+
+PACKAGE_NAME = 'pipefish'
 
 
 def read(fname):
@@ -23,14 +27,30 @@ def read(fname):
     return codecs.open(file_path, encoding='utf-8').read()
 
 
+def read_version():
+    """
+    Read the contents of relative file.
+    """
+    file_path = os.path.join(
+        os.path.dirname(__file__), PACKAGE_NAME, 'version.py'
+    )
+    regex = re.compile('__version__ = [\'\"]([^\'\"]*)[\'\"]')
+    with codecs.open(file_path, encoding='utf-8') as fobj:
+        for line in fobj:
+            mobj = regex.match(line)
+            if mobj:
+                return regex.group(1)
+    raise Exception('Failed to read version')
+
+
 setup(
-    name='pipefish',
-    version='0.3.0',
+    name=PACKAGE_NAME,
+    version=read_version(),
     author='Tim Gates',
     author_email='tim.gates@iress.com',
     maintainer='Tim Gates',
     maintainer_email='tim.gates@iress.com',
-    packages=['pipefish'],
+    packages=[PACKAGE_NAME],
     license='GPLv3+',
     description=(
         'Process JUnit XML and Cobertura coverage XML reports into Markdown'
