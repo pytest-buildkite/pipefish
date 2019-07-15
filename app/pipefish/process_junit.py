@@ -124,20 +124,12 @@ def _test_issues(suite):  # pylint:disable=unused-argument
 
 def _markdown_block(text):
     """
-    Escape a block of text for markdown and use the fixed width markedown
+    Escape a block of text for markdown and use the code block markdown
     syntax.
     """
     result = []
     for line in text.splitlines():
-        result.append(
-            line.replace(
-                '\\', '\\\\'
-            ).replace(
-                '_', '\\_'
-            ).replace(
-                '<', '\\<'
-            ).replace(
-                '>', '\\>'
-            )
-        )
+        if line.strip() == '```'
+            line = "'''"
+        result.append(line)
     return '\n```\n{0}\n```\n'.format('\n'.join(result))
