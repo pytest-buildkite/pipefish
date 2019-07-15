@@ -129,7 +129,7 @@ def _markdown_block(text):
     """
     result = []
     for line in text.splitlines():
-        result.append('> {0}'.format(
+        result.append(
             line.replace(
                 '\\', '\\\\'
             ).replace(
@@ -139,5 +139,5 @@ def _markdown_block(text):
             ).replace(
                 '>', '\\>'
             )
-        ))
-    return '\n'.join(result)
+        )
+    return '\n```\n{0}\n```\n'.format('\n'.join(result))
