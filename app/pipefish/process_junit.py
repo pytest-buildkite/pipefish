@@ -42,7 +42,7 @@ def process_junit_xml(filepath):
 
 def _collect_cases(suite):
     """
-    Read ElementTree Test Cases
+    Read `ElementTree` Test Cases
     """
     result = []
     for case in suite.iter('testcase'):
