@@ -39,7 +39,7 @@ def read_version():
         for line in fobj:
             mobj = regex.match(line)
             if mobj:
-                return regex.group(1)
+                return mobj.group(1)
     raise Exception('Failed to read version')
 
 
