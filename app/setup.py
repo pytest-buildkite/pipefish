@@ -15,7 +15,6 @@ from setuptools import setup
 
 # }}}
 
-
 PACKAGE_NAME = 'pipefish'
 
 
@@ -25,13 +24,23 @@ def load_readme(fname):
     """
     file_path = os.path.join(os.path.dirname(__file__), fname)
     with codecs.open(file_path, encoding='utf-8') as fobj:
-        return re.sub(
-            '[(]([^)]*[.]md)[)]',
+        sub = (
             '(https://github.com/'
             'pytest-buildkite/pipefish'
-            '/blob/master/\\g<1>)',
+            '/blob/master/\\g<1>)'
+        )
+        markdown_fixed = re.sub(
+            '[(]([^)]*[.](?:md|rst))[)]',
+            sub,
             fobj.read(),
         )
+        rst_fixed = re.sub(
+            '[(]([^)]*[.](?:md|rst))[)]',
+            '^[.][.] [_][`][^`]*[`][:] ([^)]*[.](?:md|rst))',
+            sub,
+            markdown_fixed
+        )
+        return rst_fixed
 
 
 def read_version():
