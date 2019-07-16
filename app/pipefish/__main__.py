@@ -7,8 +7,8 @@ Usage:
 
 Options:
     -h --help                  Show this screen
-    --junit=<xmlpath>          Process JUnit XML to Markdown
-    --cobertura=<xmlpath>      Process Cobertura Coverage XML to Markdown
+    --junit=<path>             Process JUnit XML to Markdown
+    --cobertura=<path>         Process Cobertura Coverage XML to Markdown
 """
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
