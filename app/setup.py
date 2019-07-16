@@ -32,10 +32,9 @@ def load_readme(fname):
         markdown_fixed = re.sub(
             '[(]([^)]*[.](?:md|rst))[)]',
             sub,
-            fobj.read(),
+            fobj.read()
         )
         rst_fixed = re.sub(
-            '[(]([^)]*[.](?:md|rst))[)]',
             '^[.][.] [_][`][^`]*[`][:] ([^)]*[.](?:md|rst))',
             sub,
             markdown_fixed
