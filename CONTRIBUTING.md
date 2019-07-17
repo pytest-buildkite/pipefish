@@ -7,13 +7,13 @@ in all your interactions with the project.
 
 ## Member Responsibilities
 
-First things first, the pytest-buildkite/pipefish community welcomes all
-contributors with good intentions and we will as much as possible respect your
-efforts to contribute. Specifically we will try and request changes where
-required and as last resort make changes on top of pull requests leaving your
-work with due acknowledgement. We will specifically avoid finding some fault
-with your code and then submit a similar pull request that contains little
-acknowledgement of the original work.
+First things first, the pipefish community welcomes all contributors with
+good intentions and we will as much as possible respect your efforts to
+contribute. Specifically we will try and request changes where required and as
+last resort make changes on top of pull requests leaving your work with due
+acknowledgement. We will specifically avoid finding some fault with your code
+and then submit a similar pull request that contains little acknowledgement of
+the original work.
 
 ## Contributor Responsibilities
 
