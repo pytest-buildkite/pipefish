@@ -1,9 +1,0 @@
-args
-cobertura
-exename
-junit
-JUnit
-nosec
-pipefish
-pylint
-xml

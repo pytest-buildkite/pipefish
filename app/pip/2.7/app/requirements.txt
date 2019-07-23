@@ -1,3 +1,2 @@
 defusedxml
 docopt
-mock

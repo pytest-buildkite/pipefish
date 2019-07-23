@@ -4,16 +4,13 @@
 `setuptools` Distribution for pipefish
 """
 
-# {{{ Import
 # System  Imports
 import codecs
 import os
 import re
 
 # External Imports
-from setuptools import setup
-
-# }}}
+from setuptools import find_packages, setup
 
 PACKAGE_NAME = 'pipefish'
 
@@ -32,7 +29,7 @@ def load_readme(fname):
         markdown_fixed = re.sub(
             '[(]([^)]*[.](?:md|rst))[)]',
             sub,
-            fobj.read()
+            fobj.read(),
         )
         rst_fixed = re.sub(
             '^[.][.] [_][`][^`]*[`][:] ([^)]*[.](?:md|rst))',
@@ -65,7 +62,7 @@ setup(
     author_email='tim.gates@iress.com',
     maintainer='Tim Gates',
     maintainer_email='tim.gates@iress.com',
-    packages=[PACKAGE_NAME],
+    packages=find_packages(exclude=['tests']),
     license='GPLv3+',
     description=(
         'Process JUnit XML and Cobertura coverage XML reports into Markdown'
@@ -73,13 +70,14 @@ setup(
     long_description=load_readme('README.md'),
     long_description_content_type='text/markdown',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
-    install_requires=['docopt', 'defusedxml'],
+    install_requires=[
+        elem for elem in
+        'defusedxml\ndocopt'.split('\n')
+        if elem
+    ],
     url='https://github.com/pytest-buildkite/pipefish',
-    classifiers=[
+    classifiers=[elem for elem in [
         'Development Status :: 4 - Beta',
-        'Framework :: Pytest',
-        'Intended Audience :: Developers',
-        'Topic :: Software Development :: Testing',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
@@ -92,5 +90,5 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Operating System :: OS Independent',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-    ],
+    ] if elem],
 )
