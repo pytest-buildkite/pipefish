@@ -2,6 +2,8 @@
 
 set -euxo pipefail
 
+python -c 'print("\n".join(sorted(__import__("os").environ.keys())))'
+
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 CMD="${1:-test}"
