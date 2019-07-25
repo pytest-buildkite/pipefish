@@ -17,6 +17,7 @@ PYVER=3.7
 cd "${BASEDIR}/app"
 # Version dependant checks
 for PYVER in ${PYTHONVERS} ; do
+  rm -rf "${BASEDIR}/app/.coverage" "${BASEDIR}/app/coverage.xml"
   "python${PYVER}" -m flake8 "${MODULES[@]}"
   "python${PYVER}" -m isort -rc -c --diff "${MODULES[@]}"
   "python${PYVER}" -m bandit -r "${MODULES[@]}"
@@ -25,4 +26,6 @@ for PYVER in ${PYTHONVERS} ; do
 done
 # validate doco
 "${BASEDIR}/ci/in_docker/doco.sh"
+cp "${BASEDIR}/app/.coverage" "${BASEDIR}/.coverage"
+cp "${BASEDIR}/app/coverage.xml" "${BASEDIR}/coverage.xml"
 echo 'Testing Complete'
