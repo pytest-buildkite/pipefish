@@ -9,8 +9,6 @@ services:
       - TRAVIS_JOB_ID
       - TRAVIS_BRANCH
       - CI
-    env:
-       TRAVIS_JOB_ID="$TRAVIS_JOB_ID" -e TRAVIS_BRANCH="$TRAVIS_BRANCH"
     volumes:
       - type: bind
         source: .
