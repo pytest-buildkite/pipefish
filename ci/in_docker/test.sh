@@ -17,7 +17,6 @@ PYVER=3.7
 cd "${BASEDIR}/app"
 # Version dependant checks
 for PYVER in ${PYTHONVERS} ; do
-  rm -rf "${BASEDIR}/app/.coverage" "${BASEDIR}/app/coverage.xml"
   "python${PYVER}" -m flake8 "${MODULES[@]}"
   "python${PYVER}" -m isort -rc -c --diff "${MODULES[@]}"
   "python${PYVER}" -m bandit -r "${MODULES[@]}"
