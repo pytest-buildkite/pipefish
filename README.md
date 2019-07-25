@@ -6,6 +6,7 @@ Process JUnit XML and Cobertura coverage XML reports into Markdown
 [![Python Versions](https://img.shields.io/pypi/pyversions/pipefish.svg)](https://pypi.org/project/pipefish)
 [![PyPi downloads per month](https://img.shields.io/pypi/dm/pipefish.svg)](https://pypi.org/project/pipefish)
 [![Documentation Status](https://readthedocs.org/projects/pipefish/badge/?version=latest)](https://pipefish.readthedocs.io/en/latest/?badge=latest)
+[![Coverage Status](https://coveralls.io/repos/github/pytest-buildkite/pipefish/badge.svg)](https://coveralls.io/github/pytest-buildkite/pipefish)
 
 # Additional Documentation:
 * [Online Documentation](https://pipefish.readthedocs.io/en/latest/)
