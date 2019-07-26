@@ -1,6 +1,5 @@
 {
     "project_name":  "pipefish",
-    "python_versions": "2.7 3.4 3.5 3.6 3.7",
     "project_long_name":  "{{ cookiecutter.project_name }}",
     "project_description": "Process JUnit XML and Cobertura coverage XML reports into Markdown",
     "project_long_description": "{{ cookiecutter.project_description }}",
@@ -10,6 +9,7 @@
     "project_url": "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}",
     "py_modulename":  "{{ cookiecutter.project_slug }}",
     "community_name":  "{{ cookiecutter.project_name }}",
+    "dictionary": "en_AU",
     "docker_application_tagname": "app",
     "docker_workspace_dirname": "workspace",
     "docker_application_dirname": "{{ cookiecutter.docker_application_tagname }}",
@@ -27,9 +27,12 @@
     "readthedocs_name": "{{ cookiecutter.project_name }}",
     "app_requirements": "defusedxml\ndocopt",
     "cov_fail_under": "100",
-    "dictionary": "en_AU",
     "python_requires": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     "python_versions": "2.7 3.4 3.5 3.6 3.7",
     "classifier_pytwo": "Programming Language :: Python :: 2",
-    "classifier_pytwoseven": "Programming Language :: Python :: 2.7"
+    "classifier_pytwoseven": "Programming Language :: Python :: 2.7",
+    "travis_status_url": "https://travis-ci.org/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}.svg?branch=master",
+    "travis_build_url": "https://travis-ci.org/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}",
+    "appveyor_status_url": "https://ci.appveyor.com/api/projects/status/github/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/branch/master?svg=true",
+    "appveyor_build_url": "https://ci.appveyor.com/project/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}"
 }
