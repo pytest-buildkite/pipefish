@@ -22,9 +22,19 @@ from [PyPI](https://pypi.org/).
 $ pip install pipefish
 ```
 
-# Download from PyPI.org
+
+
+
+## Prerequisites:
+- defusedxml
+- docopt
+
+
+## Download from PyPI.org
 
 https://pypi.org/project/pipefish/
+
+
 
 # Contributing
 
