@@ -2,7 +2,7 @@
 
 [![Azure Status](https://dev.azure.com/timgates/timgates/_apis/build/status/pytest-buildkite.pipefish?branchName=master)](https://dev.azure.com/timgates/timgates/_build/latest?definitionId=12&branchName=master)
 [![Travis Status](https://travis-ci.org/pytest-buildkite/pipefish.svg?branch=master)](https://travis-ci.org/pytest-buildkite/pipefish)
-[![Appveyor Status](https://ci.appveyor.com/api/projects/status/github/pytest-buildkite/pipefish/branch/master?svg=true)](https://ci.appveyor.com/project/pytest-buildkite/pipefish)
+[![Appveyor Status](https://ci.appveyor.com/api/projects/status/github/timgates42/pipefish/branch/master?svg=true)](https://ci.appveyor.com/project/timgates42/pipefish)
 [![PyPI version](https://img.shields.io/pypi/v/pipefish.svg)](https://pypi.org/project/pipefish)
 [![Python Versions](https://img.shields.io/pypi/pyversions/pipefish.svg)](https://pypi.org/project/pipefish)
 [![PyPI downloads per month](https://img.shields.io/pypi/dm/pipefish.svg)](https://pypi.org/project/pipefish)
@@ -49,10 +49,13 @@ contributions receive appropriate recognition.
 # License
 
 
+Distributed under the terms of the [GPLv3](https://opensource.org/licenses/GPL-3.0)
+license, "pipefish" is free and open source software
+
 
 # Issues
 
-If you encounter any problems, please 
+If you encounter any problems, please
 [file an issue](https://github.com/pytest-buildkite/pipefish/issues)
 along with a detailed description.
 
