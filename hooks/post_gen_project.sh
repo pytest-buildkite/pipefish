@@ -7,6 +7,7 @@ TOP="$(dirname "${BASEDIR}")"
 
 cd "${TOP}"
 git checkout -- \
+ logo.png \
  NEWS.rst \
  app/pipefish \
  app/data \

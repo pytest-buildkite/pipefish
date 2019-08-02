@@ -2,7 +2,7 @@
     "project_name":  "pipefish",
     "project_long_name":  "{{ cookiecutter.project_name }}",
     "project_description": "Process JUnit XML and Cobertura coverage XML reports into Markdown",
-    "project_long_description": "{{ cookiecutter.project_description }}",
+    "project_long_description": "{{ cookiecutter.project_description }}\n\nPart of the [pytest-buildkite](https://github.com/pytest-buildkite) community.\n\n ![Logo](https://github.com/pytest-buildkite/pipefish/raw/master/logo.png)\n\n",
     "project_slug":  "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
     "github_org": "pytest-buildkite",
     "github_repo": "pipefish",

@@ -11,6 +11,14 @@
 
 Process JUnit XML and Cobertura coverage XML reports into Markdown
 
+Part of the [pytest-buildkite](https://github.com/pytest-buildkite) community.
+
+ ![Logo](https://github.com/pytest-buildkite/pipefish/raw/master/logo.png)
+
+
+More details can be found in the
+[Online Documentation.](https://pipefish.readthedocs.io/en/latest/)
+
 # Installation
 
 You can install pipefish for
