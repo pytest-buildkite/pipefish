@@ -14,9 +14,8 @@ def test_main():
     # Setup
     from pipefish.__main__ import main
     import mock
-    fake_docopt = mock.patch(
-        'pipefish.__main__.docopt', return_value={}
-    )
+
+    fake_docopt = mock.patch("pipefish.__main__.docopt", return_value={})
     with fake_docopt, pytest.raises(SystemExit) as excctxt:
         # Exercise
         main()
@@ -24,10 +23,10 @@ def test_main():
     assert excctxt.value.args[0] == 1  # nosec
 
 
-@pytest.mark.parametrize("option,expect_call", [
-    ('--junit', 'process_junit_xml'),
-    ('--cobertura', 'process_cobertura_xml'),
-])
+@pytest.mark.parametrize(
+    "option,expect_call",
+    [("--junit", "process_junit_xml"), ("--cobertura", "process_cobertura_xml")],
+)
 def test_main_junit(option, expect_call):
     """
     GIVEN the pipefish.__main__ module entry point WHEN calling
@@ -37,15 +36,12 @@ def test_main_junit(option, expect_call):
     # Setup
     from pipefish.__main__ import main
     import mock
-    samplepath = 'samplepath'
+
+    samplepath = "samplepath"
     fake_docopt = mock.patch(
-        'pipefish.__main__.docopt', return_value={
-            option: samplepath
-        }
+        "pipefish.__main__.docopt", return_value={option: samplepath}
     )
-    fake_process = mock.patch(
-        'pipefish.__main__.%s' % (expect_call,), return_value='',
-    )
+    fake_process = mock.patch("pipefish.__main__.%s" % (expect_call,), return_value="")
     with fake_docopt, fake_process as mock_process:
         # Exercise
         main()

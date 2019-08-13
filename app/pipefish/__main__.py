@@ -10,8 +10,7 @@ Options:
     --junit=<path>             Process JUnit XML to Markdown
     --cobertura=<path>         Process Cobertura Coverage XML to Markdown
 """
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 # {{{ Imports
 # System Imports
@@ -30,24 +29,21 @@ def main():
     """
     Main Command Line entry point
     """
-    args = docopt(__doc__ % {
-        'exename': ''.join(sys.argv[0:1]),
-    })
+    args = docopt(__doc__ % {"exename": "".join(sys.argv[0:1])})
     found = False
-    if args.get('--junit') is not None:
-        print(process_junit_xml(args['--junit']))
+    if args.get("--junit") is not None:
+        print(process_junit_xml(args["--junit"]))
         found = True
-    if args.get('--cobertura') is not None:
-        print(process_cobertura_xml(args['--cobertura']))
+    if args.get("--cobertura") is not None:
+        print(process_cobertura_xml(args["--cobertura"]))
         found = True
     if not found:
         print(
-            'Please select a processing option either --junit or'
-            ' --cobertura.',
+            "Please select a processing option either --junit or" " --cobertura.",
             file=sys.stderr,
         )
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
