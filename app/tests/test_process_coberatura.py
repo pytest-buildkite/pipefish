@@ -21,12 +21,12 @@ def get_basedir():
         (
             "cobertura_coverage.xml",
             50,
-            "Coverage is 60.61% meets minimum of 50.00%" " (20 lines of 33 total).",
+            "Coverage is 60.61% meets minimum of 50.00% (20 lines of 33 total).",
         ),
         (
             "cobertura_coverage.xml",
             70,
-            "Coverage is 60.61% is below minimum of 70.00%" " (20 lines of 33 total).",
+            "Coverage is 60.61% is below minimum of 70.00% (20 lines of 33 total).",
         ),
     ],
 )
