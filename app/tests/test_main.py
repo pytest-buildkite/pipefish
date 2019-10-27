@@ -4,6 +4,7 @@ Test modules for pipefish __main__
 
 import mock
 import pytest
+
 from pipefish.__main__ import main
 
 
