@@ -7,6 +7,8 @@ import sys
 
 import pytest
 
+from pipefish.process_junit import process_junit_xml
+
 
 def get_basedir():
     """
@@ -75,7 +77,6 @@ def test_outcomes(outcome_filename, expected_outcome):
     expected outcome.
     """
     # Setup
-    from pipefish.process_junit import process_junit_xml
 
     samplepath = os.path.join(os.path.dirname(get_basedir()), "data", outcome_filename)
     # Exercise
@@ -91,8 +92,6 @@ def test_invalid_xml():
     process.
     """
     # Setup
-    from pipefish.process_junit import process_junit_xml
-
     samplepath = os.path.join(
         os.path.dirname(get_basedir()), "data", "junit_invalid.xml"
     )
