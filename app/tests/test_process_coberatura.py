@@ -6,9 +6,10 @@ import os
 import sys
 
 import pytest
+
 from pipefish.process_cobertura import (
     get_coverage_from_cobertura_xml,
-    process_cobertura_xml,
+    process_cobertura_xml
 )
 
 
