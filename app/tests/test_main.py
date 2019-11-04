@@ -2,7 +2,10 @@
 Test modules for pipefish __main__
 """
 
+import mock
 import pytest
+
+from pipefish.__main__ import main
 
 
 def test_main():
@@ -12,9 +15,6 @@ def test_main():
     return code of 1
     """
     # Setup
-    from pipefish.__main__ import main
-    import mock
-
     fake_docopt = mock.patch("pipefish.__main__.docopt", return_value={})
     with fake_docopt, pytest.raises(SystemExit) as excctxt:
         # Exercise
@@ -34,9 +34,6 @@ def test_main_junit(option, expect_call):
     file.
     """
     # Setup
-    from pipefish.__main__ import main
-    import mock
-
     samplepath = "samplepath"
     fake_docopt = mock.patch(
         "pipefish.__main__.docopt", return_value={option: samplepath}
