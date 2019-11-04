@@ -6,11 +6,7 @@ import os
 import sys
 
 import pytest
-
-from pipefish.process_cobertura import (
-    get_coverage_from_cobertura_xml,
-    process_cobertura_xml,
-)
+from pipefish import process_cobertura
 
 
 def get_basedir():
@@ -44,7 +40,7 @@ def test_outcomes(outcome_filename, minimum, expected_outcome):
     # Setup
     samplepath = os.path.join(os.path.dirname(get_basedir()), "data", outcome_filename)
     # Exercise
-    result = process_cobertura_xml(samplepath, minimum)
+    result = process_cobertura.process_cobertura_xml(samplepath, minimum)
     # Verify
     assert result == expected_outcome  # nosec
 
@@ -61,7 +57,7 @@ def test_outcomes_percentage(outcome_filename, expected_outcome):
     # Setup
     samplepath = os.path.join(os.path.dirname(get_basedir()), "data", outcome_filename)
     # Exercise
-    result = get_coverage_from_cobertura_xml(samplepath)
+    result = process_cobertura.get_coverage_from_cobertura_xml(samplepath)
     # Verify
     assert result == expected_outcome  # nosec
 
@@ -79,7 +75,7 @@ def test_invalid_xml():
     # Exercise
     with pytest.raises(Exception) as excctxt:
         # Exercise
-        process_cobertura_xml(samplepath)
+        process_cobertura.process_cobertura_xml(samplepath)
     # Verify
     assert excctxt.value.args[0] == "Failed to process Cobertura Coverage XML"  # nosec
 
@@ -97,6 +93,6 @@ def test_invalid_xml_percentage():
     # Exercise
     with pytest.raises(Exception) as excctxt:
         # Exercise
-        get_coverage_from_cobertura_xml(samplepath)
+        process_cobertura.get_coverage_from_cobertura_xml(samplepath)
     # Verify
     assert excctxt.value.args[0] == "Failed to process Cobertura Coverage XML"  # nosec
