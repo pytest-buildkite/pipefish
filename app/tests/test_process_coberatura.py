@@ -6,6 +6,7 @@ import os
 import sys
 
 import pytest
+
 from pipefish import process_cobertura
 
 
