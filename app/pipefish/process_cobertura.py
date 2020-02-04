@@ -9,7 +9,9 @@ def get_coverage_from_cobertura_xml(filepath):
     """
     Reads just the coverage percentage from the Cobertura Coverage XML file.
     """
-    doc = ET.parse(filepath)
+    doc = ET.parse(
+        filepath, forbid_dtd=True, forbid_entities=True, forbid_external=True
+    )
     for coverage in doc.iter("coverage"):
         coverage_percent = 100.0 * float(coverage.get("line-rate", "0"))
         return coverage_percent
@@ -20,7 +22,9 @@ def process_cobertura_xml(filepath, minimum_coverage=None):
     """
     Converts a Cobertura Coverage XML file into a Markdown Report.
     """
-    doc = ET.parse(filepath)
+    doc = ET.parse(
+        filepath, forbid_dtd=True, forbid_entities=True, forbid_external=True
+    )
     result = []
     for coverage in doc.iter("coverage"):
         coverage_percent = 100.0 * float(coverage.get("line-rate", "0"))

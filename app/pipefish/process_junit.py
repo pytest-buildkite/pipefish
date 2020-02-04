@@ -21,7 +21,9 @@ def process_junit_xml(filepath):
     """
     Converts a JUnit XML file into a Markdown Report.
     """
-    doc = ET.parse(filepath)
+    doc = ET.parse(
+        filepath, forbid_dtd=True, forbid_entities=True, forbid_external=True
+    )
     for suite in doc.iter("testsuite"):
         cases = _collect_cases(suite)
         errors = int(suite.attrib.get("errors", "0"))
